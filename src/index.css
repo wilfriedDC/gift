@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Nunito', sans-serif;
+}
+
+/* ── Hero ────────────────────────────────────────────────────────────── */
+
+@keyframes blobDrift1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  40% {
+    transform: translate(4%, 5%) scale(1.06);
+  }
+  70% {
+    transform: translate(-3%, 2%) scale(0.97);
+  }
+}
+
+@keyframes blobDrift2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  35% {
+    transform: translate(-5%, -4%) scale(1.07);
+  }
+  65% {
+    transform: translate(3%, -5%) scale(0.95);
+  }
+}
+
+@keyframes petalFall {
+  0% {
+    transform: translateY(-6vh) translateX(0px) rotate(0deg);
+    opacity: 0.85;
+  }
+  30% {
+    transform: translateY(30vh) translateX(22px) rotate(110deg);
+    opacity: 0.7;
+  }
+  60% {
+    transform: translateY(62vh) translateX(-14px) rotate(220deg);
+    opacity: 0.45;
+  }
+  100% {
+    transform: translateY(108vh) translateX(10px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes heroNameGlow {
+  0%,
+  100% {
+    text-shadow: 0 4px 28px rgba(212, 168, 67, 0.25);
+  }
+  50% {
+    text-shadow:
+      0 4px 48px rgba(212, 168, 67, 0.55),
+      0 0 80px rgba(242, 167, 183, 0.22);
+  }
+}
+
+@keyframes numberShimmer {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 22px rgba(212, 168, 67, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 50px rgba(212, 168, 67, 0.75)) drop-shadow(0 0 100px rgba(212, 168, 67, 0.25));
+  }
+}
+
+/* ── Shared particle / float ─────────────────────────────────────────── */
+
+@keyframes floatParticle {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  33% {
+    transform: translateY(-28px) rotate(9deg) scale(1.06);
+    opacity: 0.9;
+  }
+  66% {
+    transform: translateY(-13px) rotate(-5deg) scale(0.95);
+    opacity: 0.72;
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+
+/* ── Generic ─────────────────────────────────────────────────────────── */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes teddyBob {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-9px) rotate(2.5deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(-2deg);
+  }
+}
+
+@keyframes teddyDance {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+  20% {
+    transform: rotate(-12deg) scale(1.08);
+  }
+  40% {
+    transform: rotate(0deg) scale(1.12);
+  }
+  60% {
+    transform: rotate(12deg) scale(1.08);
+  }
+  80% {
+    transform: rotate(0deg) scale(1.04);
+  }
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.22);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.16);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+/* ── Ticket perforation ───────────────────────────────────────────────── */
+
+@keyframes filmFlicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 0.88;
+  }
+  94% {
+    opacity: 1;
+  }
+}
+
+/* ── Section reveal ──────────────────────────────────────────────────── */
+
+.section-fade {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.85s ease,
+    transform 0.85s ease;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Global ──────────────────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
