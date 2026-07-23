@@ -6,7 +6,7 @@ import us from './assets/us.jpg'
 // ── Personalize here ───────────────────────────────────────────────────────
 const HER_NAME = 'Leounda'
 const YOUR_NAME = 'WDC'
-const COUNTDOWN_DATE = new Date('2026-08-15T19:00:00')
+
 const SURPRISE_MESSAGE =
   "I love you to the moon and back — and then some. Thank you for existing. 🌙"
 
@@ -22,36 +22,7 @@ type ParticleData = {
   rotation: number
 }
 
-type Movie = {
-  title: string
-  year: number
-  director: string
-  quote: string
-  character: string
-  accentColor: string
-  labelColor: string
-}
 
-// ── Hooks ──────────────────────────────────────────────────────────────────
-function useCountdown(target: Date) {
-  const [t, setT] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
-  useEffect(() => {
-    const tick = () => {
-      const diff = target.getTime() - Date.now()
-      if (diff <= 0) return setT({ days: 0, hours: 0, minutes: 0, seconds: 0 })
-      setT({
-        days: Math.floor(diff / 86_400_000),
-        hours: Math.floor((diff % 86_400_000) / 3_600_000),
-        minutes: Math.floor((diff % 3_600_000) / 60_000),
-        seconds: Math.floor((diff % 60_000) / 1_000),
-      })
-    }
-    tick()
-    const id = setInterval(tick, 1000)
-    return () => clearInterval(id)
-  }, [target])
-  return t
-}
 
 // ── SVG Atoms ──────────────────────────────────────────────────────────────
 function StarShape({ size, opacity = 0.8, color = '#D4A843' }: { size: number; opacity?: number; color?: string }) {
