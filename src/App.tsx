@@ -393,126 +393,6 @@ function CassetteTape() {
   )
 }
 
-// ── Movie Ticket Card ──────────────────────────────────────────────────────
-function MovieCard({ movie, index }: { movie: Movie; index: number }) {
-  const [hovered, setHovered] = useState(false)
-  const isEven = index % 2 === 0
-
-  return (
-    <div
-      className="relative flex overflow-hidden"
-      style={{
-        borderRadius: '16px',
-        background: hovered ? 'rgba(255,252,248,0.07)' : 'rgba(255,252,248,0.04)',
-        border: '1px solid rgba(255,252,248,0.1)',
-        transform: hovered ? (isEven ? 'translateX(6px)' : 'translateX(-6px)') : 'translateX(0)',
-        transition: 'all 0.35s cubic-bezier(0.4,0,0.2,1)',
-        boxShadow: hovered ? '0 8px 40px rgba(0,0,0,0.3)' : '0 2px 12px rgba(0,0,0,0.2)',
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {/* Accent stripe */}
-      <div
-        style={{
-          width: '5px',
-          flexShrink: 0,
-          background: `linear-gradient(180deg, ${movie.accentColor}, ${movie.accentColor}88)`,
-        }}
-      />
-
-      {/* Main content */}
-      <div className="flex-1 px-6 py-5 min-w-0">
-        {/* Header row */}
-        <div className="flex items-start justify-between gap-4 mb-3">
-          <div className="min-w-0">
-            <h3
-              className="font-bold leading-tight"
-              style={{ color: '#FDF6EE', fontSize: 'clamp(1rem, 3vw, 1.25rem)', fontFamily: "'Nunito', sans-serif" }}
-            >
-              {movie.title}
-            </h3>
-            <p
-              className="mt-0.5 uppercase tracking-widest"
-              style={{ color: movie.accentColor, fontSize: '0.65rem', opacity: 0.85, letterSpacing: '0.2em' }}
-            >
-              {movie.year} · dir. {movie.director}
-            </p>
-          </div>
-          {/* Film reel icon */}
-          <svg width="28" height="28" viewBox="0 0 28 28" style={{ flexShrink: 0, opacity: 0.35 }}>
-            <circle cx="14" cy="14" r="12" fill="none" stroke="#FDF6EE" strokeWidth="1.5" />
-            <circle cx="14" cy="14" r="5" fill="none" stroke="#FDF6EE" strokeWidth="1.5" />
-            <circle cx="14" cy="7" r="2.2" fill="#FDF6EE" />
-            <circle cx="14" cy="21" r="2.2" fill="#FDF6EE" />
-            <circle cx="7" cy="14" r="2.2" fill="#FDF6EE" />
-            <circle cx="21" cy="14" r="2.2" fill="#FDF6EE" />
-          </svg>
-        </div>
-
-        {/* Perforated separator */}
-        <div
-          className="my-3"
-          style={{
-            borderTop: '1px dashed rgba(255,252,248,0.15)',
-          }}
-        />
-
-        {/* Quote */}
-        <blockquote
-          style={{
-            fontFamily: "'Great Vibes', cursive",
-            fontSize: 'clamp(1.3rem, 3.5vw, 1.7rem)',
-            color: '#F9D5DF',
-            lineHeight: 1.45,
-            fontStyle: 'normal',
-          }}
-        >
-          "{movie.quote}"
-        </blockquote>
-
-        {/* Citation */}
-        <p
-          className="mt-2"
-          style={{
-            color: movie.accentColor,
-            fontSize: '0.72rem',
-            opacity: 0.8,
-            letterSpacing: '0.08em',
-            fontFamily: "'Nunito', sans-serif",
-          }}
-        >
-          — {movie.character}, <em>{movie.title}</em> ({movie.year})
-        </p>
-      </div>
-
-      {/* Right stub */}
-      <div
-        className="flex flex-col items-center justify-center px-3 py-4"
-        style={{
-          borderLeft: '1px dashed rgba(255,252,248,0.12)',
-          flexShrink: 0,
-          width: '44px',
-        }}
-      >
-        <p
-          style={{
-            writingMode: 'vertical-rl',
-            transform: 'rotate(180deg)',
-            fontSize: '0.55rem',
-            letterSpacing: '0.18em',
-            color: 'rgba(253,246,238,0.3)',
-            textTransform: 'uppercase',
-            fontFamily: "'Nunito', sans-serif",
-          }}
-        >
-          ADMIT ONE
-        </p>
-        <div className="mt-3 w-5 h-5 rounded-full" style={{ background: movie.accentColor, opacity: 0.4 }} />
-      </div>
-    </div>
-  )
-}
 
 // ── Teddy Bear ─────────────────────────────────────────────────────────────
 function TeddyBear({ happy }: { happy: boolean }) {
@@ -553,28 +433,7 @@ function TeddyBear({ happy }: { happy: boolean }) {
   )
 }
 
-// ── Countdown Unit ─────────────────────────────────────────────────────────
-function CountdownUnit({ value, label }: { value: number; label: string }) {
-  return (
-    <div className="flex flex-col items-center gap-1">
-      <div
-        className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold"
-        style={{
-          background: 'rgba(242,167,183,0.15)',
-          border: '1px solid rgba(242,167,183,0.35)',
-          color: '#F9D5DF',
-          fontFamily: "'Nunito', sans-serif",
-          letterSpacing: '-0.02em',
-        }}
-      >
-        {String(value).padStart(2, '0')}
-      </div>
-      <span className="text-xs tracking-widest uppercase" style={{ color: '#C4B5D0' }}>
-        {label}
-      </span>
-    </div>
-  )
-}
+
 
 // ── Song Row ───────────────────────────────────────────────────────────────
 function SongRow({ index, title, artist, note }: {
@@ -671,7 +530,7 @@ export default function App() {
   const [surpriseOpen, setSurpriseOpen] = useState(false)
   const [teddyHappy, setTeddyHappy] = useState(false)
   const [confetti, setConfetti] = useState(false)
-  const timeLeft = useCountdown(COUNTDOWN_DATE)
+
   const sectionRefs = useRef<(HTMLElement | null)[]>([])
 
   useEffect(() => {
@@ -710,9 +569,7 @@ export default function App() {
     { title: 'Wherever', artist: 'Raoky', note: 'I’m with you' },
   ]
 
-  const movies: Movie[] = [
-    
-  ]
+
 
   return (
     <div style={{ fontFamily: "'Nunito', sans-serif", background: '#FDF6EE', color: '#4A3128' }}>
