@@ -1,11 +1,14 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
+import us from './assets/us.jpg'
+
+
 
 // ── Personalize here ───────────────────────────────────────────────────────
 const HER_NAME = 'Leounda'
 const YOUR_NAME = 'WDC'
 const COUNTDOWN_DATE = new Date('2026-08-15T19:00:00')
 const SURPRISE_MESSAGE =
-  "Every single moment with you is my favorite memory. I love you to the moon and back — and then some. Thank you for existing. 🌙"
+  "I love you to the moon and back — and then some. Thank you for existing. 🌙"
 
 // ── Types ──────────────────────────────────────────────────────────────────
 type ParticleData = {
@@ -691,77 +694,24 @@ export default function App() {
   }
 
   const photos = [
-    { src: 'https://images.unsplash.com/photo-1554486840-db3a33d9318e?w=400&h=400&fit=crop&auto=format', caption: 'forever in bloom', rotation: -3, alt: 'Pink flowers' },
-    { src: 'https://images.unsplash.com/photo-1771598480268-b8da5af0c67c?w=400&h=400&fit=crop&auto=format', caption: 'our golden hour', rotation: 2.5, alt: 'Couple at sunset' },
-    { src: 'https://images.unsplash.com/photo-1615919737249-965d68c7e439?w=400&h=400&fit=crop&auto=format', caption: 'soft as petals', rotation: -1.5, alt: 'Pink rose' },
-    { src: 'https://images.unsplash.com/photo-1749566787207-bd56427f4454?w=400&h=400&fit=crop&auto=format', caption: 'you & me', rotation: 3, alt: 'Two figures at sunset' },
-    { src: 'https://images.unsplash.com/photo-1589458456444-f7158a7e8a4f?w=400&h=400&fit=crop&auto=format', caption: 'wild & beautiful', rotation: -2.5, alt: 'Pink roses' },
-    { src: 'https://images.unsplash.com/photo-1766156124803-4c11960cd4d5?w=400&h=400&fit=crop&auto=format', caption: 'into the light', rotation: 1.5, alt: 'Silhouette at sunset' },
+
+    { src: '', caption: '', rotation: 2.5, alt: '' },
+
+    { src: us , caption: 'you & me', rotation: 3, alt: 'Two figures at sunset' },
+
+    { src: '', caption: '', rotation: 1.5, alt: '' },
   ]
 
   const songs = [
     { title: "I Won't Give Up", artist: 'Jason Mraz', note: 'because I never will' },
     { title: 'Talking to the Moon', artist: 'Bruno Mars', note: 'thinking of you, always' },
     { title: 'Ano tavela', artist: 'Lion Hill', note: 'Mandrakizay tsy agnambela' },
-    { title: 'Make You Feel My Love', artist: 'Adele', note: 'no matter what' },
-    { title: 'Bloom', artist: 'The Paper Kites', note: 'you bloom so beautifully' },
+    { title: 'A Thousand Years', artist: 'Christina Perri', note: 'for every lifetime' },
+    { title: 'Wherever', artist: 'Raoky', note: 'I’m with you' },
   ]
 
   const movies: Movie[] = [
-    {
-      title: 'La La Land',
-      year: 2016,
-      director: 'Damien Chazelle',
-      quote: "Here's to the ones who dream, foolish as they may seem.",
-      character: 'Mia Dolan',
-      accentColor: '#F5C842',
-      labelColor: '#FFF8D0',
-    },
-    {
-      title: 'Forrest Gump',
-      year: 1994,
-      director: 'Robert Zemeckis',
-      quote: 'Life is like a box of chocolates — you never know what you\'re gonna get.',
-      character: 'Mrs. Gump',
-      accentColor: '#7BC4D4',
-      labelColor: '#D0F0F8',
-    },
-    {
-      title: 'The Notebook',
-      year: 2004,
-      director: 'Nick Cassavetes',
-      quote: "I am nothing special, of this I am sure. I am a common man — but I've loved another with all my heart, and to me, this has always been enough.",
-      character: 'Noah Calhoun',
-      accentColor: '#F2A7B7',
-      labelColor: '#FFD5DF',
-    },
-    {
-      title: 'Before Sunrise',
-      year: 1995,
-      director: 'Richard Linklater',
-      quote: 'If there\'s any kind of magic in this world, it must be in the attempt of understanding someone.',
-      character: 'Celine',
-      accentColor: '#A8C67C',
-      labelColor: '#D8F0B8',
-    },
-    {
-      title: 'A Walk to Remember',
-      year: 2002,
-      director: 'Adam Shankman',
-      quote: 'Love is always patient and kind. It is never jealous. Love is never boastful or conceited.',
-      character: 'Jamie Sullivan',
-      accentColor: '#C4A8D4',
-      labelColor: '#EDD5FF',
-    },
-    {
-      title: 'Eternal Sunshine of the Spotless Mind',
-      year: 2004,
-      director: 'Michel Gondry',
-      quote: 'How happy is the blameless vestal\'s lot! The world forgetting, by the world forgot. Eternal sunshine of the spotless mind!',
-      character: 'Clementine',
-      accentColor: '#8AADD0',
-      labelColor: '#C8DEFF',
-    },
+    
   ]
 
   return (
@@ -980,10 +930,10 @@ export default function App() {
               My dearest {HER_NAME},
             </p>
             <div className="space-y-5" style={{ color: '#5C3D35', fontSize: '1rem', lineHeight: '2rem' }}>
-              <p>There are 18 candles on your cake today, but in my heart every single one is a story I've been lucky enough to share with you — a laugh in the hallway, a moment where you looked at something ordinary and made it luminous.</p>
-              <p>You have this rare, quiet magic. You make people feel seen without even trying. You carry whole worlds inside you — your kindness, your humor, that slightly dramatic reaction to good food, your way of caring so deeply it sometimes looks like stubbornness from the outside.</p>
-              <p>I am so unbearably proud of the person you've become. And today, on this threshold — standing at the edge of all the years ahead — I want you to know that wherever life takes you, you take my whole heart with you.</p>
-              <p>Happy 18th birthday, love. This year, and every year after it, is yours.</p>
+              <p>If you have a million fans, then im one of them. If you have five fans, then i'm one of them. If you have one fans, then I'm that one. If you have no fans, then I'm dead </p>
+              <p>What I mean is that I'm your biggest fan. I've told you that I love everything about you, even the way you which you sometimes worry about. In my eyes, you're perfect. </p>
+              <p>You are the only girl I can't pretend not to love. you're the reason I believe in love. Nobady has ever made me feel the way you make me feel.</p>
+              <p>Now you're 18 years old, and I wish you nothing but the very best. I pray that God continues to bless you and guide you every step of the way. This year, and every year after it, is yours.</p>
             </div>
             <p className="mt-9 text-right" style={{ fontFamily: "'Great Vibes', cursive", fontSize: '2.1rem', color: '#D4A843', lineHeight: 1.3 }}>
               Always yours, {YOUR_NAME} ♥
@@ -1045,54 +995,7 @@ export default function App() {
       {/* ═══════════════════════════════════════════════════════════════════
           5. MOVIES — Cinematic ticket stubs
       ═══════════════════════════════════════════════════════════════════ */}
-      <section
-        ref={(el) => { sectionRefs.current[3] = el }}
-        className="section-fade py-20 md:py-28 px-4 overflow-hidden"
-        style={{
-          background: 'linear-gradient(160deg, #1A1008 0%, #2A1418 40%, #1C1226 100%)',
-          animation: 'filmFlicker 12s ease-in-out infinite',
-        }}
-      >
-        {/* Subtle film grain overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\' opacity=\'0.04\'/%3E%3C/svg%3E")',
-            opacity: 0.6,
-            zIndex: 0,
-          }}
-        />
-
-        <div className="relative z-10 max-w-2xl mx-auto">
-          <SectionHeading eyebrow="films that move us" title="Our Cinema" light />
-
-          {/* Film strip accent */}
-          <div className="flex justify-center gap-2 mb-8 opacity-30">
-            {Array.from({ length: 16 }).map((_, i) => (
-              <div key={i} className="flex flex-col gap-0.5">
-                <div className="w-3 h-2 rounded-sm" style={{ background: '#8B6040' }} />
-                <div className="w-3 h-6" style={{ background: '#6B4A30' }} />
-                <div className="w-3 h-2 rounded-sm" style={{ background: '#8B6040' }} />
-              </div>
-            ))}
-          </div>
-
-          {/* Movie cards */}
-          <div className="space-y-4">
-            {movies.map((m, i) => (
-              <MovieCard key={i} movie={m} index={i} />
-            ))}
-          </div>
-
-          {/* Footer note */}
-          <p
-            className="text-center mt-10 opacity-35 italic"
-            style={{ fontFamily: "'Great Vibes', cursive", fontSize: '1.4rem', color: '#F9D5DF' }}
-          >
-            every frame a feeling, every film a memory
-          </p>
-        </div>
-      </section>
+      
 
       {/* ═══════════════════════════════════════════════════════════════════
           6. SURPRISE
@@ -1160,25 +1063,13 @@ export default function App() {
               </div>
             ))}
           </div>
-          <div className="flex justify-center mb-4" style={{ opacity: 0.88 }}><Moon size={64} /></div>
-          <SectionHeading eyebrow="something is coming" title="Until Our Next Adventure" light />
-          <p className="mb-10" style={{ color: '#EDD5E0', fontSize: '0.95rem', lineHeight: 1.85, opacity: 0.8 }}>
-            Something special is waiting.<br />
-            Something I've been planning just for you.<br />
-            Count the seconds with me.
-          </p>
-          <div className="flex justify-center gap-3 md:gap-6 mb-12">
-            <CountdownUnit value={timeLeft.days} label="days" />
-            <CountdownUnit value={timeLeft.hours} label="hrs" />
-            <CountdownUnit value={timeLeft.minutes} label="min" />
-            <CountdownUnit value={timeLeft.seconds} label="sec" />
-          </div>
+          
           <FloralDivider light />
           <p className="mt-8" style={{ fontFamily: "'Great Vibes', cursive", fontSize: 'clamp(2rem, 7vw, 3rem)', color: '#D4A843', lineHeight: 1.4 }}>
             Happy Birthday, my love.
           </p>
           <p className="mt-3 uppercase tracking-widest" style={{ fontSize: '0.62rem', color: '#C4B5D0', letterSpacing: '0.28em', opacity: 0.6 }}>
-            made with every piece of my heart
+            I want to see you achieve everything you told me. Now give me a hug and a kiss hihihi.
           </p>
           <div className="mt-8 inline-block" style={{ fontSize: '2.8rem', animation: 'heartbeat 1.6s ease-in-out infinite' }}>
             ♥
